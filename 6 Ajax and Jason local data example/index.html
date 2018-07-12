@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <title>Ajax Sandbox</title>
+  <style>
+    body{
+      background: goldenrod;
+    }
+  .container{
+    max-width:500px;
+    text-align: center;
+    margin: 50px auto;
+    padding: 5%;
+    border: solid 5px red;
+    background: rgba(255, 255, 255, 0.678);
+  }
+  .container, ul{
+    box-shadow: 10px 10px 20px black;
+  }
+
+  ul{
+ 
+    border: solid 5px black;
+    max-width: 300px;
+    margin: 18px auto;
+    padding: 10px;
+
+  }
+  ul:nth-child(odd){
+    background: rgb(235, 222, 148);
+  }
+  ul:nth-child(even){
+    background: gray;
+    color: white;
+  }
+  li{
+    margin: 0 auto;
+  }
+  #button2{
+    background: red;
+   color: whitesmoke;
+
+   border: solid 2px gray;
+   box-shadow: 3px 3px 6px transparent;
+  }
+
+   #button2:hover{
+    background:gold;
+   color: black;
+   font-weight: bold;
+   border: solid 2px black;
+   box-shadow: 3px 3px 6px black;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <br>
+    <h1>Customers List</h1> 
+    <br>
+    <button id="button2">Get &nbsp; Customers</button> 
+  </div>
+
+  <div class="customer-list">
+    <div id="customers"></div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
