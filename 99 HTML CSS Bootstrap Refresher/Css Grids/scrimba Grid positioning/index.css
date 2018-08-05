@@ -1,0 +1,66 @@
+
+
+
+ /* ---------  Sample 1  ---------------------------*/
+
+/* .container {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px 200px 40px;
+}
+
+.header {
+ //-1 symbolises the end  you can also use the number of colums  so in this case  2/13
+  grid-column: 2/-1; 
+
+}
+
+.menu {
+  grid-row: 1/4;
+}
+
+.content {
+grid-column: 2/-1;
+}
+
+.footer {
+ grid-column: 2/ -1;  
+} */
+
+
+
+
+
+
+
+ /* ---------  Sample 2 Template Areas  ---------------------------*/
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 40px auto 40px;
+  grid-template-areas: 
+    /* use periods for blank spaces */
+    "m h h h h h h h h h h . "
+    "m c c c c c c c c c c c"
+    "m f f f f f f f f f f ."
+}
+
+.header {
+  grid-area:  h;
+}
+
+.menu {
+  grid-area: m;
+}
+
+.content {
+ grid-area:  c;
+}
+
+.footer {
+  grid-area: f;
+}
