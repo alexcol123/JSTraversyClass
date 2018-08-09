@@ -1,28 +1,35 @@
-function createNode(element) {
-  return document.createElement(element);
+
+
+
+async function results (){
+  fetch('https://randomuser.me/api/?results=20')
+  .then((resp) => resp.json())
+  .then((data) => {
+    let uiResults = document.getElementById('authors');
+    let authors = data.results;
+    console.log(authors);
+
+    let res = '';
+
+    authors.forEach(person => {
+      res +=`
+      <li>
+      <img src="${person.picture.large}" alt="image" width="50">
+        <span>
+          ${person.name.first} <br> ${person.name.last}
+        </span>
+      </li>
+      `;
+    });
+  
+
+
+    uiResults.innerHTML = res;
+  })
+
+
+
 }
 
-function append(parent, el) {
-return parent.appendChild(el);
-}
 
-const ul = document.getElementById('authors');
-const url = 'https://randomuser.me/api/?results=10';
-fetch(url)
-.then((resp) => resp.json())
-.then(function(data) {
-let authors = data.results;
-return authors.map(function(author) {
-  let li = createNode('li'),
-      img = createNode('img'),
-      span = createNode('span');
-  img.src = author.picture.medium;
-  span.innerHTML = `${author.name.first} ${author.name.last}`;
-  append(li, img);
-  append(li, span);
-  append(ul, li);
-})
-})
-.catch(function(error) {
-console.log(JSON.stringify(error));
-});   
+results();
