@@ -1,3 +1,9 @@
+// steps to follow 
+// 1 do Html page 
+
+
+
+//2 Add const data bellow
 const data = [
   {
     name: 'John Doe',
@@ -22,17 +28,50 @@ const data = [
     lookingfor: 'female',
     location: 'Lynn MA',
     image: 'https://randomuser.me/api/portraits/men/83.jpg'
+  }, 
+   {
+    name: 'Latifa Jackson',
+    age: 26,
+    gender: 'female',
+    lookingfor: 'male',
+    location: 'Detroit MI',
+    image: 'https://randomuser.me/api/portraits/women/62.jpg'
+  },
+  {
+    name: 'James Trump',
+    age: 32,
+    gender: 'male',
+    lookingfor: 'female',
+    location: 'Boston MA',
+    image: 'https://randomuser.me/api/portraits/men/43.jpg'
+  }, 
+   {
+    name: 'Jenn Thompson',
+    age: 32,
+    gender: 'female',
+    lookingfor: 'male',
+    location: 'Washington DC',
+    image: 'https://randomuser.me/api/portraits/women/63.jpg'
   }
 ];
 
+
+
+
+
+
+//  Step 4 
+// place the iterator in a variable 
 const profiles = profileIterator(data);
 
-// Call first profile
-nextProfile();
 
+
+//  Step 5
 // Next Event
 document.getElementById('next').addEventListener('click', nextProfile);
 
+
+//  Step 6
 // Next Profile Display
 function nextProfile() {
   const currentProfile = profiles.next().value;
@@ -45,6 +84,7 @@ function nextProfile() {
         <li class="list-group-item">Location: ${currentProfile.location}</li>
         <li class="list-group-item">Preference: ${currentProfile.gender} looking for ${currentProfile.lookingfor}</li>
       </ul>
+      </ul>
     `;
 
     document.getElementById('imageDisplay').innerHTML = `<img src="${currentProfile.image}">`;
@@ -54,7 +94,17 @@ function nextProfile() {
   }
 }
 
-// Profile Iterator
+
+//  Step 7
+// DIsplay  1st profile automatically
+nextProfile();
+
+
+
+
+
+
+//  Step 3    Profile Iterator
 function profileIterator(profiles) {
   let nextIndex = 0;
 
