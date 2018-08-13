@@ -7,7 +7,7 @@
 const data = [
   {
     name: 'John Doe',
-    age: 32,
+    age: 42,
     gender: 'male',
     lookingfor: 'female',
     location: 'Boston MA',
